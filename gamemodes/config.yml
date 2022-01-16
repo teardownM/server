@@ -1,0 +1,7 @@
+title: Dev server 1
+gamemode: sandbox
+version: 0.0.0
+debug: true
+public_ip: "159.89.18.92"
+map: villa_gordon
+spawn_points: [[135, 9, -72], [135, 8, -66], [125, 8, -66]]
