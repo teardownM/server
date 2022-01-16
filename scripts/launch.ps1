@@ -1,5 +1,35 @@
 $Host.UI.RawUI.WindowTitle = "TeardownM - server";
 
+try {
+    Import-Module powershell-yaml -ErrorAction Stop
+}
+catch {
+    write-host "[INFO]: powershell-yaml is not installed" -foreground yellow
+    write-host "[INFO]: Attempting to install powershell-yaml. Please say 'YES' to all" -foreground yellow
+    Install-Module powershell-yaml -Scope CurrentUser
+    write-host "[SUCCESS]: Installed 'powershell-yaml'" -foreground green
+}
+
+try {
+    [string[]]$fileContent = Get-Content "./gamemodes/config.yml" -ErrorAction Stop
+}
+catch {
+    write-host "[ERROR]: Could not find ./gamemodes/config.yml. Please ensure the file exists." -foreground red
+}
+
+$content = ''
+foreach ($line in $fileContent) { $content = $content + "`n" + $line }
+$yaml = ConvertFrom-YAML $content
+
+$title = $yaml.title
+$gamemode = $yaml.gamemode
+$version = $yaml.version
+$debug = $yaml.debug
+$public_ip = $yaml.public_ip
+$map = $yaml.map
+
+$Host.UI.RawUI.WindowTitle = "TeardownM - $title - $gamemode - $map - v$version";
+
 write-host "
   _                     _                     __  __ 
  | |                   | |                   |  \/  |
@@ -11,11 +41,17 @@ write-host "
   by Alexandar Gyurov, Daniel W, Malte0621, Casin
 
   Build: 0.0.0 unstable
-  Gamemode: sandbox
 
-  Report any bugs to: https://github.com/teardownM/server
+  Title: $title
+  Gamemode: $gamemode
+  Version: $version
+  Debug: $debug
+  Public IP: $public_ip
+  Map: $map
 
-" -foreground blue
+  Report any bugs to: https://github.com/teardownM/server/issues
+
+" -foreground blue 
 
 try {
     Get-Process 'com.docker.proxy' -ErrorAction Stop > $null
@@ -27,8 +63,7 @@ catch {
     exit
 }
 
-
-if ((docker ps -aqf "name=^teardownM-nakama$") -eq $null) {
+if ($null -eq (docker ps -aqf "name=^teardownM-nakama$")) {
     write-host "[INFO]: Could not find teardownM docker container" -foreground yellow
     write-host "[INFO]: Creating docker container from docker-compose.yml" -foreground yellow
 
@@ -44,3 +79,4 @@ else {
     docker logs -f --tail 10 (docker ps -aqf "name=^teardownM-nakama$" )
 }
 
+Read-Host -Prompt "Press enter to exit"
