@@ -4,7 +4,7 @@
 | Function           | Arguments             | Description                     | Return Type  |
 | :--------          | :-------              | :-------------------------      | :----------  |
 | KickPlayer         | PlayerID, Reason      | Kicks the player for x reason   | None         |
-| BanPlayer          | PlayerID, Reason      | Bans the player for x reason    | None         |
+| BanPlayer          | PlayerID, Reason, Length      | Bans the player for x reason    | None         |
 | SendPlayerMessage  | PlayerID, Message     | Send the player a message       | None         |
 
 #### Accessors
