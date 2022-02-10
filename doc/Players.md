@@ -1,5 +1,5 @@
 ## Player Functions
-```
+
 ### General
 | Function           | Arguments             | Description                     | Return Type  |
 | :--------          | :-------              | :-------------------------      | :----------  |
@@ -34,4 +34,4 @@
 | SetPlayerVelocity  | PlayerID, Vector3     | Sets the player's velocity       | None         |
 | SetPlayerHealth    | PlayerID, Int         | Sets the player's health         | None         |
 | SetPlayerVehicle   | PlayerID, Int         | Sets the player's vehicle        | None         |
-```
+
