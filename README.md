@@ -18,7 +18,7 @@
   <p align="center">
     ⚒️ Bringing server-based multiplayer to <a href="https://store.steampowered.com/app/1167630/Teardown/">Teardown</a> ⚒️
     <br />
-    <a href="#"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/teardownM/server/doc/readme.md"><strong>Explore the docs »</strong></a>
     <br />
     <br />
     <a href="https://github.com/teardownM/client">View Client</a>
