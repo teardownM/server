@@ -1,5 +1,5 @@
 [Callbacks](Callbacks.md)  
 [Events](Events.md)  
-[Player](Player.md)  
+[Player](Players.md)  
 [Vehicle](Vehicle.md)  
 [Server](Server.md)  
