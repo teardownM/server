@@ -1,0 +1,6 @@
+[book]
+authors = ["vulcan-dev"]
+language = "en"
+multilingual = false
+src = "src"
+title = "api-book"
