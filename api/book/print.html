@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>api-book</title>
+        <title>TeardownM Documentation</title>
         <meta name="robots" content="noindex" />
         <!-- Custom HTML head -->
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
@@ -105,7 +105,7 @@
                         </button>
                     </div>
 
-                    <h1 class="menu-title">api-book</h1>
+                    <h1 class="menu-title">TeardownM Documentation</h1>
 
                     <div class="right-buttons">
                         <a href="print.html" title="Print this book" aria-label="Print this book">
@@ -208,7 +208,20 @@ function OnTick()
     -- Called every tick
 end
 </code></pre>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="api"><a class="header" href="#api">API</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="teardownm-api"><a class="header" href="#teardownm-api">TeardownM API</a></h1>
+<p>For our API, we have two different versions available</p>
+<ul>
+<li><a href="api/./server.html">Server API</a>
+<ul>
+<li>This is ran on the server, it is used for gamemodes and other server-side functions.</li>
+</ul>
+</li>
+<li><a href="api/./client.html">Client API</a>
+<ul>
+<li>This is ran on the client, it is used for client-side functions.</li>
+</ul>
+</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="client-api"><a class="header" href="#client-api">Client API</a></h1>
 <h2 id="logging"><a class="header" href="#logging">Logging</a></h2>
 <ul>
@@ -218,16 +231,6 @@ end
 </ul>
 <h2 id="player-related"><a class="header" href="#player-related">Player Related</a></h2>
 <ul>
-<li><code>TDM_GetPlayerName(iPlayer)</code>
-<ul>
-<li><strong>Returns</strong> the player's name if successful, nil otherwise.</li>
-</ul>
-</li>
-<li><code>TDM_GetPlayerSteamID(iPlayer)</code>
-<ul>
-<li><strong>Returns</strong> the player's SteamID if successful, nil otherwise.</li>
-</ul>
-</li>
 <li><code>TDM_GetPlayers()</code>
 <ul>
 <li><strong>Returns</strong> a table of all players.</li>
@@ -278,6 +281,20 @@ end
 <div style="break-before: page; page-break-before: always;"></div><h1 id="server-api"><a class="header" href="#server-api">Server API</a></h1>
 <h2 id="player-related-1"><a class="header" href="#player-related-1">Player Related</a></h2>
 <ul>
+<li><code>KickPlayer(iPlayer, sReason)</code>
+<ul>
+<li>Returns true if successful, false otherwise.</li>
+</ul>
+</li>
+<li><code>BanPlayer(iPlayer, sReason, [opt] iTimeSeconds)</code>
+<ul>
+<li>Returns true if successful, false otherwise.</li>
+</ul>
+</li>
+</ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="shared"><a class="header" href="#shared">Shared</a></h1>
+<h2 id="player-related-2"><a class="header" href="#player-related-2">Player Related</a></h2>
+<ul>
 <li><code>TDM_GetPlayerName(iPlayer)</code>
 <ul>
 <li><strong>Returns</strong> the player's name if successful, nil otherwise.</li>
@@ -299,7 +316,6 @@ end
 </ul>
 </li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="shared"><a class="header" href="#shared">Shared</a></h1>
 
                     </main>
 
