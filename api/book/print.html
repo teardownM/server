@@ -309,6 +309,8 @@ end
 </li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="shared"><a class="header" href="#shared">Shared</a></h1>
+<p><strong>Important</strong>: Any code on the server, remove <code>TDM_</code> from the beginning.<br />
+Only client-side code should start with <code>TDM_</code></p>
 <h2 id="player-related-2"><a class="header" href="#player-related-2">Player Related</a></h2>
 <ul>
 <li><code>TDM_GetPlayerName(iPlayer)</code>
@@ -346,9 +348,37 @@ end
 <li><strong>Returns</strong> the player's health.</li>
 </ul>
 </li>
-<li><code>TDM_GetPlayerVehicle()</code>
+</ul>
+<h2 id="vehicle-related"><a class="header" href="#vehicle-related">Vehicle Related</a></h2>
+<ul>
+<li><code>TDM_GetPlayerVehicle(iPlayer)</code>
 <ul>
 <li><strong>Returns</strong> the player's vehicle if they are in one, nil otherwise.</li>
+</ul>
+</li>
+<li><code>TDM_GetVehiclePosition()</code>
+<ul>
+<li><strong>Returns</strong> the vehicle's position (x, y, z).</li>
+</ul>
+</li>
+<li><code>TDM_GetVehicleRotation()</code>
+<ul>
+<li><strong>Returns</strong> the vehicle's rotation (x, y, z, w).</li>
+</ul>
+</li>
+<li><code>TDM_SetPlayerVehicle(iPlayer, iVehicle)</code>
+<ul>
+<li><strong>Returns</strong> true if successful, false otherwise.</li>
+</ul>
+</li>
+<li><code>TDM_SetVehiclePosition(iVehicle, x, y, z)</code>
+<ul>
+<li><strong>Returns</strong> true if successful, false otherwise.</li>
+</ul>
+</li>
+<li><code>TDM_SetVehicleRotation(iVehicle, x, y, z, w)</code>
+<ul>
+<li><strong>Returns</strong> true if successful, false otherwise.</li>
 </ul>
 </li>
 </ul>
