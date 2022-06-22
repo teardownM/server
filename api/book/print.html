@@ -175,16 +175,26 @@ By default, we have created two gamemodes for you, <code>sandbox</code> and <cod
 <ol>
 <li>Create a new directory in <code>server/gamemodes</code> of the name of your gamemode.</li>
 <li>Create a <code>main.lua</code> file in that directory.</li>
+<li>Create a <code>config.yml</code> file, this file will look like:</li>
+</ol>
+<pre><code class="language-yaml">spawn_points:
+  lee_chemicals: [[100, 50, 0], [1000, -432, 572]]
+  marina: [[0, 0, 0]]
+  villa_gordon: [[0, 0, 0]]
+  evertides: [[0, 0, 0]]
+  frustrum: [[0, 0, 0]]
+  isla_estocastica: [[0, 0, 0]]
+  quilez_security: [[0, 0, 0]]
+  cullington: [[0, 0, 0]]
+destruction_enabled: true
+</code></pre>
+<ol start="4">
 <li>The <code>main.lua</code> file should contain the following code:</li>
 </ol>
 <pre><code class="language-lua">local player = require(&quot;player&quot;)
 
 function OnInitialize()
     -- Called when the gamemode is initialized
-end
-
-function OnConnecting(user_id)
-    -- Called when a player is connecting
 end
 
 function OnConnected(user_id)
@@ -319,6 +329,26 @@ end
 <li><code>TDM_GetPlayerCount()</code>
 <ul>
 <li><strong>Returns</strong> the number of players.</li>
+</ul>
+</li>
+<li><code>TDM_GetPlayerPosition()</code>
+<ul>
+<li><strong>Returns</strong> the player's position (x, y, z).</li>
+</ul>
+</li>
+<li><code>TDM_GetPlayerRotation()</code>
+<ul>
+<li><strong>Returns</strong> the player's rotation (x, y, z, w).</li>
+</ul>
+</li>
+<li><code>TDM_GetPlayerHealth()</code>
+<ul>
+<li><strong>Returns</strong> the player's health.</li>
+</ul>
+</li>
+<li><code>TDM_GetPlayerVehicle()</code>
+<ul>
+<li><strong>Returns</strong> the player's vehicle if they are in one, nil otherwise.</li>
 </ul>
 </li>
 </ul>

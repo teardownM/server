@@ -5,7 +5,20 @@ By default, we have created two gamemodes for you, `sandbox` and `roleplay`.
 ## Creating a gamemode
 1. Create a new directory in `server/gamemodes` of the name of your gamemode.
 2. Create a `main.lua` file in that directory.
-3. The `main.lua` file should contain the following code:
+3. Create a `config.yml` file, this file will look like:
+```yaml
+spawn_points:
+  lee_chemicals: [[100, 50, 0], [1000, -432, 572]]
+  marina: [[0, 0, 0]]
+  villa_gordon: [[0, 0, 0]]
+  evertides: [[0, 0, 0]]
+  frustrum: [[0, 0, 0]]
+  isla_estocastica: [[0, 0, 0]]
+  quilez_security: [[0, 0, 0]]
+  cullington: [[0, 0, 0]]
+destruction_enabled: true
+```
+4. The `main.lua` file should contain the following code:
 ```lua
 local player = require("player")
 
