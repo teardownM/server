@@ -13,10 +13,6 @@ function OnInitialize()
     -- Called when the gamemode is initialized
 end
 
-function OnConnecting(user_id)
-    -- Called when a player is connecting
-end
-
 function OnConnected(user_id)
     -- Called when a player has connected and spawned in the world
 end
